@@ -1,0 +1,35 @@
+//This is sample code that will loop the fan on and off
+//The D7 LED loops at the same time as a diagnostic
+
+int led= D7;
+int fan = D4;       // This is the output pin for the fan
+bool Num=true;
+Timer timer(2000, fanon);   //setup a timer for the fan function
+
+void setup() {
+
+  pinMode(fan, OUTPUT);
+  pinMode(led, OUTPUT);
+  timer.start();
+}
+
+
+void loop() {
+    
+}
+
+void fanon(){
+    
+        if(Num == true){
+        digitalWrite(fan, HIGH);
+        digitalWrite(led, HIGH);
+        Num=!Num;
+        }
+        
+        else{
+             digitalWrite(fan, LOW);
+        digitalWrite(led, LOW);
+        Num=!Num;
+        }
+    }
+    
